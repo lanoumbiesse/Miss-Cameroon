@@ -37,7 +37,7 @@
                         <input id="prenom" type="text" placeholder="@lang('Prenom *')" class="full-width" name="prenom" required>
                         {!! $errors->first('prenom', '<small class="help-block">:message</small>') !!}
 
-                        <input id="datenais" type="text" placeholder="@lang('Date de naissance (dd-mm-yyyy) *')" class="full-width" name="datenais" required>
+                        <input id="datenais" type="text" placeholder="@lang('Date de naissance (yyyy-mm-dd) *')" class="full-width" name="datenais" required>
                         {!! $errors->first('datenais', '<small class="help-block">:message</small>') !!}
 
                         <input id="lieunais" type="text" placeholder="@lang('Lieu de naissance *')" class="full-width" name="lieunais" required>
