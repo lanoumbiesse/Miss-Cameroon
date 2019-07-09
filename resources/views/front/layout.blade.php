@@ -21,9 +21,21 @@
 
 	<!-- CSS
 	================================================== -->
-	<link rel="stylesheet" href="{{ asset('css/base.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/vendor.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="css/style.min.css" rel="stylesheet">
+	<style type="text/css">
+		@media (min-width: 800px) and (max-width: 850px) {
+						.navbar:not(.top-nav-collapse) {
+								background: #1C2331!important;
+						}
+				}
+	</style>
 	@yield('css')
 
 	<style>
@@ -46,171 +58,74 @@
 </head>
 
 <body id="top">
-
-	<!-- header
-   ================================================== -->
-   <header class="short-header">
-
-   	<div class="gradient-block"></div>
-
-   	<div class="row header-content">
-
-   		<div class="logo">
-	    	<a href="{{ url('') }}">Author</a>
-	    </div>
-
-	   	<nav id="main-nav-wrap">
-			<ul class="main-navigation sf-menu">
-				<li {{ currentRoute('home') }}>
-					<a href="{{ route('home') }}">@lang('Home')</a>
-				</li>
-				<li class="has-children">
-					<a href="#">@lang('Categories')</a>
-					<ul class="sub-menu">
-						@foreach ($categories as $category)
-							<li><a href="{{ route('category', [$category->slug ]) }}">{{ $category->title }}</a></li>
-						@endforeach
-					</ul>
-				</li>
-				@guest
-					<li {{ currentRoute('contacts.create') }}>
-						<a href="{{ route('contacts.create') }}">@lang('Contact')</a>
-					</li>
-				@endguest
-				@request('register')
-					<li class="current">
-						<a href="{{ request()->url() }}">@lang('Register')</a>
-					</li>
-				@endrequest
-				@request('password/email')
-					<li class="current">
-						<a href="{{ request()->url() }}">@lang('Forgotten password')</a>
-					</li>
-				@else
-					@guest
-						<li {{ currentRoute('login') }}>
-							<a href="{{ route('login') }}">@lang('Login')</a>
-						</li>
-						@request('password/reset')
-							<li class="current">
-								<a href="{{ request()->url() }}">@lang('Password')</a>
-							</li>
-						@endrequest
-						@request('password/reset/*')
-							<li class="current">
-								<a href="{{ request()->url() }}">@lang('Password')</a>
-							</li>
-						@endrequest
-					@else
-						@admin
-							<li>
-								<a href="{{ url('admin') }}">@lang('Administration')</a>
-							</li>
-						@endadmin
-						@redac
-							<li>
-								<a href="{{ url('admin/posts') }}">@lang('Administration')</a>
-							</li>
-						@endredac
-						<li>
-							<a id="logout" href="{{ route('logout') }}">@lang('Logout')</a>
-							<form id="logout-form" action="{{ route('logout') }}" method="POST" class="hide">
-								{{ csrf_field() }}
-							</form>
-						</li>
-					@endguest
-				@endrequest
-			</ul>
-		</nav> <!-- end main-nav-wrap -->
-
-		<div class="search-wrap">
-			<form role="search" method="get" class="search-form" action="{{ route('posts.search') }}">
-				<label>
-					<input type="search" class="search-field" placeholder="@lang('Type Your Keywords')"  name="search" autocomplete="off" required>
-				</label>
-				<input type="submit" class="search-submit" value="">
-			</form>
-
-			<a href="#" id="close-search" class="close-btn">Close</a>
-
-		</div> <!-- end search wrap -->
-
-		<div class="triggers">
-			<a class="search-trigger" href="#"><i class="fa fa-search"></i></a>
-			<a class="menu-toggle" href="#"><span>Menu</span></a>
-		</div> <!-- end triggers -->
-
-   	</div>
-
-   </header> <!-- end header -->
+@include('front.navmenu')
+@include('front.carousel')
 
    @yield('main')
 
    <!-- footer
    ================================================== -->
-   <footer>
 
-   	<div class="footer-main">
+	   <!--Footer-->
+	   <footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
-   		<div class="row">
+	     <!--Call to action-->
+	     <div class="pt-4">
+	       <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button">Download MDB
+	         <i class="fas fa-download ml-2"></i>
+	       </a>
+	       <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start free tutorial
+	         <i class="fas fa-graduation-cap ml-2"></i>
+	       </a>
+	     </div>
+	     <!--/.Call to action-->
 
-	      	<div class="col-six tab-full mob-full footer-info">
+	     <hr class="my-4">
 
-	            <h4>@lang('About Our Site')</h4>
+	     <!-- Social icons -->
+	     <div class="pb-4">
+	       <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+	         <i class="fab fa-facebook-f mr-3"></i>
+	       </a>
 
-	               <p>@lang('Lorem ipsum Ut velit dolor Ut labore id fugiat in ut fugiat nostrud qui in dolore commodo eu magna Duis cillum dolor officia esse mollit proident Excepteur exercitation nulla. Lorem ipsum In reprehenderit commodo aliqua irure labore.')</p>
+	       <a href="https://twitter.com/MDBootstrap" target="_blank">
+	         <i class="fab fa-twitter mr-3"></i>
+	       </a>
 
-		      </div> <!-- end footer-info -->
+	       <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+	         <i class="fab fa-youtube mr-3"></i>
+	       </a>
 
-	      	<div class="col-three tab-1-2 mob-1-2 site-links">
+	       <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+	         <i class="fab fa-google-plus-g mr-3"></i>
+	       </a>
 
-	      		<h4>@lang('Site Links')</h4>
+	       <a href="https://dribbble.com/mdbootstrap" target="_blank">
+	         <i class="fab fa-dribbble mr-3"></i>
+	       </a>
 
-	      		<ul>
-				  	<li><a href="#">@lang('About us')</a></li>
-					<li><a href="{{ url('') }}">@lang('Blog')</a></li>
-					<li><a href="{{ route('contacts.create') }}">@lang('Contact')</a></li>
-					<li><a href="#">@lang('Privacy Policy')</a></li>
-				</ul>
+	       <a href="https://pinterest.com/mdbootstrap" target="_blank">
+	         <i class="fab fa-pinterest mr-3"></i>
+	       </a>
 
-	      	</div> <!-- end site-links -->
+	       <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+	         <i class="fab fa-github mr-3"></i>
+	       </a>
 
-	      	<div class="col-three tab-1-2 mob-1-2 social-links">
+	       <a href="http://codepen.io/mdbootstrap/" target="_blank">
+	         <i class="fab fa-codepen mr-3"></i>
+	       </a>
+	     </div>
+	     <!-- Social icons -->
 
-	      		<h4>@lang('Social')</h4>
+	     <!--Copyright-->
+	     <div class="footer-copyright py-3">
+	       © 2018 Copyright:
+	       <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+	     </div>
+	     <!--/.Copyright-->
 
-	      		<ul>
-	      			<li><a href="#">Twitter</a></li>
-					<li><a href="#">Facebook</a></li>
-					<li><a href="#">Dribbble</a></li>
-					<li><a href="#">Google+</a></li>
-					<li><a href="#">Instagram</a></li>
-				</ul>
-
-	      	</div> <!-- end social links -->
-
-	      </div> <!-- end row -->
-
-   	</div> <!-- end footer-main -->
-
-      <div class="footer-bottom">
-      	<div class="row">
-
-      		<div class="col-twelve">
-	      		<div class="copyright">
-		         	<span>© Copyright Abstract 2016</span>
-		         	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
-		         </div>
-
-		         <div id="go-top">
-		            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon icon-arrow-up"></i></a>
-		         </div>
-	      	</div>
-
-      	</div>
-      </div> <!-- end footer-bottom -->
-
-   </footer>
+	   </footer>
 
    <div id="preloader">
     	<div id="loader"></div>
@@ -229,6 +144,21 @@
 		   })
 	   })
    </script>
+
+	 <!-- SCRIPTS -->
+	 <!-- JQuery -->
+	 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	 <!-- Bootstrap tooltips -->
+	 <script type="text/javascript" src="js/popper.min.js"></script>
+	 <!-- Bootstrap core JavaScript -->
+	 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 <!-- MDB core JavaScript -->
+	 <script type="text/javascript" src="js/mdb.min.js"></script>
+		 <!-- Initializations -->
+ <script type="text/javascript">
+	 // Animations initialization
+	 new WOW().init();
+ </script>
 
    @yield('scripts')
 
