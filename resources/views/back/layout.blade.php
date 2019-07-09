@@ -173,6 +173,23 @@ desired effect
               ],
             ],
           ])
+          
+           @include('back.partials.treeview', [
+            'icon' => 'user',
+            'type' => 'Candidate',
+            'items' => [
+              [
+                'route' => route('candidate.index'),
+                'command' => 'Lister',
+                'color' => 'blue',
+              ],
+              [
+                'route' => route('candidate.create'),
+                'command' => 'ajouter',
+                'color' => 'yellow',
+              ],
+            ],
+          ])
 
           @include('back.partials.treeview', [
             'icon' => 'comment',

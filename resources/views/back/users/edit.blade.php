@@ -1,4 +1,4 @@
-@extends('back.layout')
+   @extends('back.layout')
 
 @section('css')
 
