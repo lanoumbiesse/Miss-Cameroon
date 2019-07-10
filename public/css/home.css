@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+ }
+
+.peoplechoice{
+  font-size: 30px;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  box-shadow: 0px 4px 30px rgba(120, 64, 190, 0.6);
+  font-weight: bold;
+}
+.d-text{
+  font-size: 22px;
+}
+.navbar{
+  z-index: 1000;
+    position: absolute;
+    width: 100%;
+}
+
+footer {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+.footerul li a {
+  color: black;
+}
