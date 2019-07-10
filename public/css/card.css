@@ -97,6 +97,7 @@ top: 0;
 
 }
 .card {
+  border: 2px solid #c13584;
   margin-right: 0px;
   margin-bottom: 15px;
   transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
@@ -149,7 +150,7 @@ border-bottom-right-radius: 12px;
 }
 
 .card__img--hover:hover {
-    height: 40%;
+    /*height: 40%;*/
     opacity: 0.3;
 }
 
@@ -335,4 +336,10 @@ a.btn-social,
 .btn-twitter:hover
 {
     background-color: #83c3f3;
+}
+
+.carousel-item .d-block{
+  width: 150px !important;
+  height: auto;
+  margin-bottom: 10px;
 }

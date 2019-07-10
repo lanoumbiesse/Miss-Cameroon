@@ -16,7 +16,7 @@
 
       <!--Grid row-->
 
-			<article class="card col-md-3   col-lg-3 col-sm-6 col-xs-3 px-0">
+			<article class="card col-md-3   col-lg-3 col-sm-6 col-xs-6 px-0">
 			  <div class="card__info-hover">
 			      <div class="card__clock-info">
 			        <span class="card__time">Découvrir Son Profil</span>
@@ -46,7 +46,7 @@
 			</article>
 
 
-			<article class="card col-md-3  col-lg-3 col-sm-6 col-xs-3 px-0">
+			<article class="card col-md-3  col-lg-3 col-sm-6 col-xs-6 px-0">
 			  <div class="card__info-hover">
 			      <div class="card__clock-info">
 			        <span class="card__time">Découvrir Son Profil</span>
@@ -55,7 +55,7 @@
 			  </div>
 			  <div class="card__img"></div>
 			  <a href="#" class="card_link">
-			     <div class="card__img--hover" style="background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');"></div>
+			     <div class="card__img--hover" style="background-image: url('/images/11mq3yzbhto5.png');"></div>
 			   </a>
 			  <div class="card__info">
 					<div class="row nbvotes">
@@ -74,7 +74,7 @@
 			  </div>
 
 			</article>
-			<article class="card col-md-3   col-lg-3 col-sm-6 col-xs-3 px-0">
+			<article class="card col-md-3   col-lg-3 col-sm-6 col-xs-6 px-0">
 				<div class="card__info-hover">
 						<div class="card__clock-info">
 							<span class="card__time">Découvrir Son Profil</span>
@@ -102,7 +102,7 @@
 				</div>
 
 			</article>
-			<article class="card col-md-3  col-lg-3 col-sm-6 col-xs-3 px-0">
+			<article class="card col-md-3  col-lg-3 col-sm-6 col-xs-6 px-0">
 				<div class="card__info-hover">
 						<div class="card__clock-info">
 							<span class="card__time">Découvrir Son Profil</span>
@@ -130,7 +130,7 @@
 				</div>
 
 			</article>
-			<article class="card col-md-3 col-lg-3 col-sm-6 col-xs-3 px-0">
+			<article class="card col-md-3 col-lg-3 col-sm-6 col-xs-6 px-0">
 				<div class="card__info-hover">
 						<div class="card__clock-info">
 							<span class="card__time">Découvrir Son Profil</span>
@@ -166,6 +166,30 @@
     </section>
     <!--Section: Main info-->
 
+		<div class="container" style="margin-top:50px;">
+			<h2 class="my-5 h3 text-center text-white">Nos partenaires</h2>
+	    <div class="carousel slide" data-ride="carousel">
+	        <div class="carousel-inner">
+	            <div class="carousel-item active">
+	                <div class="row">
+	                    <div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/art.jpg')}}" alt="1 slide"></div>
+	                    <div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/black.jpg')}}" alt="2 slide"></div>
+	                    <div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/gimac.jpg')}}" alt="3 slide"></div>
+											<div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/imhome.jpg')}}" alt="3 slide"></div>
+
+	                </div>
+	            </div>
+	            <div class="carousel-item">
+	                <div class="row">
+										<div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/art.jpg')}}" alt="1 slide"></div>
+										<div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/black.jpg')}}" alt="2 slide"></div>
+										<div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/rmb.jpg')}}" alt="3 slide"></div>
+										<div class="col-sm"><img class="d-block w-60" src="{{asset('images/partenaires/valcair.jpg')}}" alt="3 slide"></div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 
   </div>
 </main>
