@@ -1,10 +1,10 @@
 <!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-      <strong>MDB</strong>
+    <a class="navbar-brand" href="/">
+    <img src="{{asset('/images/logo2.png')}}" width="80">
     </a>
 
     <!-- Collapse -->
@@ -19,18 +19,28 @@
       <!-- Left -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="#">Accueil
             <span class="sr-only">(current)</span>
           </a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About MDB</a>
+          <a class="nav-link" href="#" target="_blank">Centre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Free download</a>
+          <a class="nav-link" href="#" target="_blank">Littoral</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
+          <a class="nav-link" href="#" target="_blank">Ouest</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" target="_blank">Nord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" target="_blank">Sud</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" target="_blank">Est</a>
         </li>
       </ul>
 
@@ -46,12 +56,7 @@
             <i class="fab fa-twitter"></i>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
-            target="_blank">
-            <i class="fab fa-github mr-2"></i>MDB GitHub
-          </a>
-        </li>
+
       </ul>
 
     </div>

@@ -15,7 +15,7 @@
 
       <!--First slide-->
       <div class="carousel-item active">
-        <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('/images/header/Chantal-Biya-Miss-Cameroun-2018-Les-Marches-dElodie.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -23,20 +23,19 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>Learn Bootstrap 4 with MDB</strong>
+                <strong>Miss Cameroun 2019</strong>
               </h1>
 
-              <p>
-                <strong>Best & free guide of responsive web design</strong>
+              <p class="peoplechoice">
+                <strong>The People's Choice</strong>
               </p>
 
-              <p class="mb-4 d-none d-md-block">
-                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-                  available. Create your own, stunning website.</strong>
+              <p class="mb-4 d-none d-md-block d-text">
+                <strong>Votre voix compte, Contribuez à l'élection de votre miss.</strong>
               </p>
 
-              <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
-                <i class="fas fa-graduation-cap ml-2"></i>
+              <a href="#sectioncard"  class="btn btn-secondary  btn-lg">Votez maintenant
+                <i class="fa fa-arrow-down ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -50,7 +49,7 @@
 
       <!--Second slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/47.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('/images/header/IMG_00161.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -58,20 +57,19 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>Learn Bootstrap 4 with MDB</strong>
+                <strong>Miss Cameroun 2019</strong>
               </h1>
 
-              <p>
-                <strong>Best & free guide of responsive web design</strong>
+              <p class="peoplechoice">
+                <strong>The People's Choice</strong>
               </p>
 
-              <p class="mb-4 d-none d-md-block">
-                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-                  available. Create your own, stunning website.</strong>
+              <p class="mb-4 d-none d-md-block d-text">
+                <strong>Votre voix compte, Contribuez à l'élection de votre miss.</strong>
               </p>
 
-              <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
-                <i class="fas fa-graduation-cap ml-2"></i>
+              <a href="#sectioncard"  class="btn btn-secondary  btn-lg">Votez maintenant
+                <i class="fa fa-arrow-down ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -85,7 +83,7 @@
 
       <!--Third slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/79.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('/images/header/misscmr2015-00.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -93,20 +91,19 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>Learn Bootstrap 4 with MDB</strong>
+                <strong>Miss Cameroun 2019</strong>
               </h1>
 
-              <p>
-                <strong>Best & free guide of responsive web design</strong>
+              <p class="peoplechoice">
+                <strong>The People's Choice</strong>
               </p>
 
-              <p class="mb-4 d-none d-md-block">
-                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-                  available. Create your own, stunning website.</strong>
+              <p class="mb-4 d-none d-md-block d-text">
+                <strong>Votre voix compte, Contribuez à l'élection de votre miss.</strong>
               </p>
 
-              <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
-                <i class="fas fa-graduation-cap ml-2"></i>
+              <a href="#sectioncard"  class="btn btn-secondary  btn-lg">Votez maintenant
+                <i class="fa fa-arrow-down ml-2"></i>
               </a>
             </div>
             <!-- Content -->
