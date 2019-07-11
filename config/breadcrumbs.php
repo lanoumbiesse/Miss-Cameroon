@@ -27,6 +27,12 @@ return [
         'icon' => 'user',
         'url' => '/admin/users',
     ],
+    'candidate' =>
+    [
+        'name' => 'candidate',
+        'icon' => 'user',
+        'url' => '/admin/candidate',
+    ],
     'edit' =>
     [
         'name' => 'edition',

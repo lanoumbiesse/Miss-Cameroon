@@ -80,9 +80,9 @@ class CandidateController extends Controller
             $chemin = $chemin.'.'.$extension;
 
          }
-         while (file_exists(public_path().'/images/'.$id.$chemin));
+         while (file_exists(public_path().'/images/2019/'.$id.$chemin));
 
-            $first->move(public_path().'/images/',$id.$chemin); 
+            $first->move(public_path().'/images/2019/',$id.$chemin); 
 
             DB::table('pictures-path')->insertGetId(
     ['chemin' => $id.$chemin,
@@ -105,8 +105,8 @@ class CandidateController extends Controller
             $chemin = substr(str_shuffle($permitted_chars), 0, 10);
              $chemin = $chemin.'.'.$extension;
          }
-          while (file_exists(public_path().'/images/'.$id.$chemin.$extension));
-                $request->file('p'.$i)->move(public_path().'/images/',$id.$chemin); 
+          while (file_exists(public_path().'/images/2019/'.$id.$chemin.$extension));
+                $request->file('p'.$i)->move(public_path().'/images/2019/',$id.$chemin); 
 
                           DB::table('pictures-path')->insertGetId(
                          ['chemin' => $id.$chemin,

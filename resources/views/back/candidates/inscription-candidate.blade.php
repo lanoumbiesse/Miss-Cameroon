@@ -1,53 +1,54 @@
-@extends('front.layout')
+  @extends('back.layout')
+@section('css')
+
+@endsection
 
 @section('main')
-   <section id="content-wrap">
-        <div class="row">
-            <div class="col-twelve">
-                <div class="primary-content">
-                    @if (session('confirmation-success'))
-                        @component('front.components.alert')
-                            @slot('type')
-                                success
-                            @endslot
-                            {!! session('confirmation-success') !!}
-                        @endcomponent
-                    @endif
-                    @if (session('confirmation-danger'))
-                        @component('front.components.alert')
-                            @slot('type')
-                                error
-                            @endslot
-                            {!! session('confirmation-danger') !!}
-                        @endcomponent
-                    @endif
+
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            
                     <h3>@lang('FORMULAIRE D INSCRIPTION')</h3>
                     <div></div>
+                    <div class="box box-primary">
                     <form method="POST" action="{{route('candidatestore')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         @if ($errors->has('log'))
-                            @component('front.components.error')
+                            @component('back.components.error')
                                 {{ $errors->first('log') }}
                             @endcomponent
                         @endif 
+                        <div class="box-body">
 
-                        <input id="nom" type="text" placeholder="@lang('Nom *')" class="full-width" name="nom" value="{{ old('nom') }}" required autofocus>
-                        {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
+                        <div class="form-group {{ $errors->has('nom') ? 'has-error' : '' }}">
+                          <label for="name">@lang('Nom *')</label>
+                        <input id="nom" type="text" class="form-control" name="nom" value="{{ old('nom') }}" required autofocus>
+                        </div>
 
-                        <input id="prenom" type="text" placeholder="@lang('Prenom *')" class="full-width" name="prenom" required>
-                        {!! $errors->first('prenom', '<small class="help-block">:message</small>') !!}
+                        <div class="form-group {{ $errors->has('prenom') ? 'has-error' : '' }}">
+                         <label for="name">@lang('Prenom *')</label>
+                        <input id="prenom" type="text"  class="form-control" name="prenom" required>
+                        </div>
+                        
+                          <div class="form-group {{ $errors->has('datenais') ? 'has-error' : '' }}">
+                          <label for="name">@lang('Date de naissance *')</label>
+                        <input id="datenais" type="text" placeholder="@lang('yyyy-mm-dd')" class="form-control" name="datenais" required>
+                        </div>
 
-                        <input id="datenais" type="text" placeholder="@lang('Date de naissance (yyyy-mm-dd) *')" class="full-width" name="datenais" required>
-                        {!! $errors->first('datenais', '<small class="help-block">:message</small>') !!}
+                        <div class="form-group {{ $errors->has('lieunais') ? 'has-error' : '' }}">
+                        <label for="name">@lang('Lieu de naissance *')</label>
+                        <input id="lieunais" type="text" class="form-control" name="lieunais" required>
+                         </div>
 
-                        <input id="lieunais" type="text" placeholder="@lang('Lieu de naissance *')" class="full-width" name="lieunais" required>
-                        {!! $errors->first('lieunais', '<small class="help-block">:message</small>') !!}
+                         <div class="form-group {{ $errors->has('pays') ? 'has-error' : '' }}">
+                         <label for="name">@lang('Pays de residence *')</label>
+                        <input id="pays" type="text"  class="form-control" name="pays" required>
+                        </div>
 
-                        <input id="pays" type="text" placeholder="@lang('Pays de residence *')" class="full-width" name="pays" required>
-                        {!! $errors->first('pays', '<small class="help-block">:message</small>') !!}
-
-                       <h6>@lang('Region d origine *')</h6>
-                        <select id = "ro" name="ro" class="full-width" required>
+                        <div class="form-group {{ $errors->has('ro') ? 'has-error' : '' }}">
+                       <label for="ro">@lang('Region dorigine *')</label>
+                        <select id = "ro" name="ro" class="form-control" required>
                         <option value="Adamoua">Adamoua</option>
                         <option value="Centre">Centre</option>
                         <option value="Extreme-nord">Extreme-nord</option>
@@ -59,11 +60,12 @@
                         <option value="Sud-ouest">Sud-ouest</option>
                         <option value="Nord-ouest">Nord-ouest</option>
                         </select>
-                        {!! $errors->first('ro', '<small class="help-block">:message</small>') !!}
+                        </div>
 
-                         <h6>@lang('Region de participation au concours')</h6>
-                        <select id = "rc" name="rc" class="full-width" >
-                         <option value="Null">Null</option>
+                          <div class="form-group {{ $errors->has('rc') ? 'has-error' : '' }}">
+                       <label for="rc">@lang('Region du concours *')</label>
+                        <select id = "rc" name="rc" class="form-control" required>
+                        <option value="Adamoua">Null</option>
                         <option value="Adamoua">Adamoua</option>
                         <option value="Centre">Centre</option>
                         <option value="Extreme-nord">Extreme-nord</option>
@@ -75,10 +77,11 @@
                         <option value="Sud-ouest">Sud-ouest</option>
                         <option value="Nord-ouest">Nord-ouest</option>
                         </select>
-                        {!! $errors->first('rc', '<small class="help-block">:message</small>') !!}
+                        </div>
 
-                        <h6>@lang('Niveau d etude *')</h6>
-                        <select id = "niveau" name="niveau" class="full-width" required >
+                        <div class="form-group {{ $errors->has('rc') ? 'has-error' : '' }}">
+                        <label for="niveau">@lang('Niveau d etude*')</label>
+                        <select id = "niveau" name="niveau" class="form-control" required >
                         <option value="premiere annee">Premiere annee</option>
                         <option value="deuxieme annee">Deuxieme annee</option>
                         <option value="troisieme annee">Troisieme annee</option>
@@ -89,52 +92,71 @@
                         <option value="doctorante">Doctorante</option>
                         <option value="Doctorat">Doctorat</option>
                         </select>
-                        {!! $errors->first('niveau', '<small class="help-block">:message</small>') !!}
+                        </div>
+                       
+                        <div class="form-group {{ $errors->has('numtel') ? 'has-error' : '' }}">
+                        <label for="numtel">@lang('Numero de telephone*')</label>
+                        <input id="numtel" type="text" class="form-control" name="numtel" required>
+                         </div>
 
-                        <input id="numtel" type="text" placeholder="@lang('Numero de telephone (+...) *')" class="full-width" name="numtel" required>
-                        {!! $errors->first('numtel', '<small class="help-block">:message</small>') !!}
 
-                         <input id="email" type="email" placeholder="@lang('Email *')" class="full-width" name="email" required>
-                         {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
+                         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                         <label for="email">@lang('Email *')</label>
+                         <input id="email" type="email" placeholder="@lang('Email *')" class="form-control" name="email" required>
+                         </div>
+                         
+                         <div class="form-group {{ $errors->has('fb') ? 'has-error' : '' }}">
+                         <label for="facebook">@lang('Lien de votre compte facebook *')</label>
+                         <input id="fb" type="url"  class="form-control" name="fb" required>
+                         </div>
+                         
+                         <div class="form-group {{ $errors->has('tw') ? 'has-error' : '' }}">
+                         <label for="twitter">@lang('Lien de votre compte twitter *')</label>
+                         <input id="tw" type="url" class="form-control" name="tw" required>
+                         </div>
 
-                         <input id="fb" type="url" placeholder="@lang('Lien du compte facebook *')" class="full-width" name="fb" required>
-                         {!! $errors->first('fb', '<small class="help-block">:message</small>') !!}
-
-                         <input id="tw" type="url" placeholder="@lang('Lien du compte twitter *')" class="full-width" name="tw" required>
-                         {!! $errors->first('tw', '<small class="help-block">:message</small>') !!}
-
-                         <input id="in" type="url" placeholder="@lang('Lien du compte ins *')" class="full-width" name="in" required>
-                         {!! $errors->first('in', '<small class="help-block">:message</small>') !!}
-
-                           <textarea id ="description" name = "description" class="full-width" maxlength=500 required >
-                             Faites une description de vous
+                         <div class="form-group {{ $errors->has('in') ? 'has-error' : '' }}">
+                          <label for="instagram">@lang('Lien de votre compte instagram *')</label>
+                         <input id="in" type="url" class="form-control" name="in" required>
+                          </div>
+ 
+                            <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+                            <label for="description">@lang('Faits une description de vous *')</label>
+                           <textarea id ="description" name = "description" class="form-control" maxlength=500 require>
+                             
                            </textarea>
-                           {!! $errors->first('description', '<small class="help-block">:message</small>') !!}
+                           </div>
 
-                           <input id="annee" type="number" placeholder="@lang('Annee de participation *')" class="full-width" name="annee" required>
-                           {!! $errors->first('annee', '<small class="help-block">:message</small>') !!}
+                           <div class="form-group {{ $errors->has('annee') ? 'has-error' : '' }}">
+                           <label for="annee">@lang('Annee de participation *')</label>
+                           <input id="annee" type="number"  class="form-control" name="annee" required>
+                            </div>
+                             
+                            <div class="form-group {{ $errors->has('first') ? 'has-error' : '' }}">
+                           <label for="annee">@lang('Premiere image *')</label>
+                           <input type="file" name="first" accept="image/*" required class="form-control">
+                           </div>
 
-                           <h6>@lang('Premiere image (4*4) *')</h6>
-                           <input type="file" name="first" accept="image/*" required class="full-width">
-                           {!! $errors->first('first', '<small class="help-block">:message</small>') !!}
+                           <div class="form-group {{ $errors->has('p1') ? 'has-error' : '' }}">
+                           <label for="p1">@lang('Deuxieme image ')</label>
+                           <input type="file" name="p1" accept="image/*" required class="form-control">
+                           </div>
 
-                           <h6>@lang('Deuxieme image (4*4) *')</h6>
-                           <input type="file" name="p1" accept="image/*"  class="full-width">
-                           {!! $errors->first('p1', '<small class="help-block">:message</small>') !!}
+                            <div class="form-group {{ $errors->has('p2') ? 'has-error' : '' }}">
+                           <label for="p2">@lang('Troixieme image ')</label>
+                           <input type="file" name="p2" accept="image/*" required class="form-control">
+                           </div>
 
-                           <h6>@lang('Troisieme image (4*4) *')</h6>
-                           <input type="file" name="p2" accept="image/*" class="full-width">
-                           {!! $errors->first('p2', '<small class="help-block">:message</small>') !!}
-
-                           <h6>@lang('Quatrieme image (4*4) *')</h6>
-                           <input type="file" name="p3" accept="image/*"  class="full-width">
-                           {!! $errors->first('p3', '<small class="help-block">:message</small>') !!}
-
-                        <input class="button-primary full-width-on-mobile" type="submit" value="@lang('Inscrire')">
+                           <div class="form-group {{ $errors->has('p3') ? 'has-error' : '' }}">
+                           <label for="p3">@lang('Quatrieme image ')</label>
+                           <input type="file" name="p3" accept="image/*" required class="form-control">
+                           </div>
+                        <input class="button-primary full-width-on-mobile form-control" type="submit" value="@lang('Inscrire')">
                         
                     </form>
-                </div>
-            </div>
+             </div>  
         </div>
-    </section>
+    </div>
+     </div>
+      </div>
 @endsection
