@@ -23,7 +23,7 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>Miss Cameroun 2019</strong>
+                <strong>Miss Cameroun 2020</strong>
               </h1>
 
               <p class="peoplechoice">
@@ -57,7 +57,7 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>Miss Cameroun 2019</strong>
+                <strong>Miss Cameroun 2020</strong>
               </h1>
 
               <p class="peoplechoice">
@@ -91,7 +91,7 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>Miss Cameroun 2019</strong>
+                <strong>Miss Cameroun 2020</strong>
               </h1>
 
               <p class="peoplechoice">

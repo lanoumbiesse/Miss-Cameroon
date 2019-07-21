@@ -10,6 +10,7 @@ use App\ {
     Models\Category
 };
 use Illuminate\Http\Request;
+use Auth;
 
 class PostController extends Controller
 {
@@ -46,6 +47,9 @@ class PostController extends Controller
      */
     public function index()
     {
+
+
+        //dd(Auth::user());
         $posts = $this->postRepository->getActiveOrderByDate($this->nbrPages);
 
         return view('front.index', compact('posts'));

@@ -18,7 +18,7 @@
 */
 
 // Home
-Route::name('home')->get('/', 'Front\PostController@index');
+Route::name('home')->get('/', 'Front\HomeController@index');
 
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
@@ -42,6 +42,13 @@ Route::name('category')->get('category/{category}', 'Front\PostController@catego
 
 // Authentification
 Auth::routes();
+
+//facebook
+Route::name('facebookurl')->get('getfacebookurl', 'Front\FacebookController@prelogin');
+Route::name('facebook')->get('facebook/callback', 'Front\FacebookController@login');
+Route::name('facebooklog')->post('facebook', 'Front\FacebookController@logininfacebook');
+Route::name('votefree')->get('vote/free/{id}', 'Front\HomeController@votefree');
+Route::name('profile')->get('profile/{id}', 'Front\HomeController@profile');
 
 
 /*

@@ -20,6 +20,36 @@ html {
 footer {
   background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
+
+@media only screen and (max-width: 768px){
+.navbar {
+      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+}
+
 .footerul li a {
   color: black;
+}
+
+.btn-fb {
+    background-color: #3b5998!important;
+    color: #fff;
+}
+.btn-fb:hover {
+
+    color: #fff;
+}
+
+
+.modal-header{
+  background-color: #c13584 !important;
+  margin-bottom: -10px;
+}
+.titresection{
+  margin-top: 10px;
+  margin-bottom: 10px;
+ font-weight: bold;
+}
+.btext{
+      color: #000000b8!important;
 }

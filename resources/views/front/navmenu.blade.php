@@ -46,6 +46,11 @@
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
+        @if(Auth::check())
+      <li class="nav-item" style="color:white;">
+        Bienvenue {{Auth::user()->name}}
+      </li>
+        @else
         <li class="nav-item">
           <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
             <i class="fab fa-facebook-f"></i>
@@ -56,7 +61,7 @@
             <i class="fab fa-twitter"></i>
           </a>
         </li>
-
+        @endif
       </ul>
 
     </div>

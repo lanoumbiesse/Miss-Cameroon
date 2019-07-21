@@ -7,7 +7,7 @@
 	<!--- basic page needs
 	================================================== -->
 	<meta charset="utf-8">
-	<title>{{ isset($post) && $post->seo_title ? $post->seo_title :  __(lcfirst('Title')) }}</title>
+	<title>People's choice</title>
 	<meta name="description" content="{{ isset($post) && $post->meta_description ? $post->meta_description : __('description') }}">
 	<meta name="author" content="@lang(lcfirst ('Author'))">
 	@if(isset($post) && $post->meta_keywords)
@@ -24,11 +24,11 @@
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
-	<link href="css/mdb.min.css" rel="stylesheet">
+	<link href="{{ asset('css/mdb.min.css')}}" rel="stylesheet">
 	<!-- Your custom styles (optional) -->
-	<link href="css/style.min.css" rel="stylesheet">
+	<link href="{{ asset('css/style.min.css')}}" rel="stylesheet">
 	<style type="text/css">
 		@media (min-width: 800px) and (max-width: 850px) {
 						.navbar:not(.top-nav-collapse) {
@@ -52,8 +52,8 @@
 
 	<!-- favicons
 	================================================== -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+	<link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 
 </head>
 
@@ -114,17 +114,18 @@
 
 	 <!-- SCRIPTS -->
 	 <!-- JQuery -->
-	 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	 <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
 	 <!-- Bootstrap tooltips -->
-	 <script type="text/javascript" src="js/popper.min.js"></script>
+	 <script type="text/javascript" src="{{ asset('js/popper.min.js')}}"></script>
 	 <!-- Bootstrap core JavaScript -->
-	 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
 	 <!-- MDB core JavaScript -->
-	 <script type="text/javascript" src="js/mdb.min.js"></script>
+	 <script type="text/javascript" src="{{ asset('js/mdb.min.js')}}"></script>
 		 <!-- Initializations -->
  <script type="text/javascript">
 	 // Animations initialization
 	 new WOW().init();
+
  </script>
 
    @yield('scripts')
