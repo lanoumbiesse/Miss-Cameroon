@@ -14,6 +14,7 @@
                 <th>@lang('Email')</th>
                 <th>@lang('Numero de tel')</th>
                 <th>@lang('Pays de residence')</th>
+                <th>@lang('Photo')</th>
                 <th>@lang('Editer')</th>
                 <th></th>
             </tr>
@@ -28,6 +29,7 @@
                       <td>{{ $candidate->email }} </td>
                     <td>{{ $candidate->numtel }}</td>
                     <td>{{ $candidate->pays_de_residence }}</td>
+                     <td><a href="{{ route('photos.show', [$candidate->id]) }}" role="button" title="@lang('Voir Photo')"></a></td>
 
                     <td><a class="btn btn-warning btn-xs btn-block" href="{{ route('candidates.edit', [$candidate->id]) }}" role="button" title="@lang('Editer')"><span class="fa fa-edit"></span></a></td>
                 </tr>

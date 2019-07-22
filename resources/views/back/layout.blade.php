@@ -187,6 +187,23 @@ desired effect
             ],
           ])
 
+            @include('back.partials.treeview', [
+            'icon' => 'user',
+            'type' => 'inscription',
+            'items' => [
+              [
+                'route' => route(inscriptions.index'),
+                'command' => 'Lister',
+                'color' => 'blue',
+              ],
+              [
+                'route' => route('inscriptions.ajouter'),
+                'command' => 'ajouter',
+                'color' => 'yellow',
+              ],
+            ],
+          ])
+
 
 
         @endadmin

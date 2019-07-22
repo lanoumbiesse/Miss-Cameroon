@@ -35,4 +35,10 @@ return [
          'status' => 'all',
     ],
 
+    'inscriptions' => [
+        'order' => 'created_at',
+        'direction' => 'desc',
+        'regionconcours' => 'all',
+    ],
+
 ];

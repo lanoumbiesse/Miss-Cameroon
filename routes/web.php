@@ -24,7 +24,7 @@ Route::name('home')->get('/', 'Front\HomeController@index');
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
 
 // Inscriptions
-Route::resource('inscriptions', 'Front\InscriptionsController');
+Route::resource('inscriptions', 'Back\InscriptionsController', ['only' => ['store']]);
 
 // Posts and comments
 Route::prefix('posts')->namespace('Front')->group(function () {
@@ -120,6 +120,10 @@ Route::prefix('admin')->namespace('Back')->group(function () {
        
         // photo
         Route::resource('photos', 'PhotoController');
+
+
+        Route::resource('inscriptions', 'InscriptionsController', ['only' => ['index']]);
+        Route::name('inscriptions.ajouter')->post('inscriptions', 'InscriptionsController@ajouter');
 
     });
 

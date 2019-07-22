@@ -92,4 +92,11 @@ return [
         'url' => '/admin/photos',
     ],
 
+    'inscriptions' =>
+    [
+        'name' => 'inscriptions',
+        'icon' => 'user',
+        'url' => '/admin/inscriptions',
+    ],
+
 ];

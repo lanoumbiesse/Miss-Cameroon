@@ -21,9 +21,24 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box">
-                 
+                    <div class="box-header with-border">
+                    <strong>@lang('Localisation') :</strong> &nbsp;
+                    <input type="radio" name="regionconcours" value="all" checked> @lang('All')&nbsp;
+                    <input type="radio" name="regionconcours" value="ADAMAOUA"> @lang('Adamoua')&nbsp;
+                    <input type="radio" name="regionconcours" value="CENTRE"> @lang('Centre')&nbsp;
+                    <input type="radio" name="regionconcours" value="EST"> @lang('Est')&nbsp;
+                    <input type="radio" name="regionconcours" value="EXTREME-NORD"> @lang('Extreme-nord')&nbsp;
+                    <input type="radio" name="regionconcours" value="LITTORAL"> @lang('Littoral')&nbsp;
+                    <input type="radio" name="regionconcours" value="OUEST"> @lang('Ouest')&nbsp;
+                    <input type="radio" name="regionconcours" value="SUD"> @lang('Sud')&nbsp;
+                    <input type="radio" name="regionconcours" value="NORD"> @lang('Nord')&nbsp;
+                    <input type="radio" name="regionconcours" value="SUD-OUEST"> @lang('Sud-ouest')&nbsp;
+                    <input type="radio" name="regionconcours" value="NORD-OUEST"> @lang('Nord-ouest')&nbsp;
+                    <input type="radio" name="regionconcours" value="Null"> @lang('Diaspora')&nbsp;<br>
+                    <div id="spinner" class="text-center"></div>
+                </div>
                 <div id="pannel" class="box-body">
-                    @include('back.candidates.table', compact('paths'))
+                    @include('back.candidates.table', compact('inscriptions'))
                 </div>
                 <!-- /.box-body -->
                 <div id="pagination" class="box-footer">
