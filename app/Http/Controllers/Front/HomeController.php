@@ -79,7 +79,7 @@ class HomeController extends Controller
     public function votefree(Request $request,$id,$id1=null){
 
       if(Auth::check()){
-       $parametre=\DB::table('parametre')->where('isactive',1)->first();
+       $parametre=\DB::table('parametre')->where('is_active',1)->first();
 
        $candidate=Candidate::find($id);
         $vote=new vote();
@@ -105,7 +105,7 @@ class HomeController extends Controller
 
     public function profile(Request $request,$id){
       $statut='null';
-      $parametre=\DB::table('parametre')->where('isactive',1)->first();
+      $parametre=\DB::table('parametre')->where('is_active',1)->first();
 
       $candidate= Candidate::where('web_id',$id)
                ->where('candidates.annee',$parametre->annee)
