@@ -23,5 +23,22 @@ return [
         'new' => false,
         'valid' => false,
     ],
+    'candidates' => [
+        'order' => 'nom',
+        'direction' => 'asc',
+        'regionconcours' => 'all',
+        'finaliste' => false,
+    ],
+    'vote' => [
+        'order' => 'created_at',
+        'direction' => 'desc',
+         'status' => 'all',
+    ],
+
+    'inscriptions' => [
+        'order' => 'created_at',
+        'direction' => 'desc',
+        'regionconcours' => 'all',
+    ],
 
 ];

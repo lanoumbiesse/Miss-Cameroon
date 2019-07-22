@@ -4,24 +4,27 @@ namespace App\Http\Controllers\Back;
 use App\ {
     Http\Controllers\Controller,
     Http\Requests\CandidateRequest,
-    Repositories\ConfigAppRepository,
-    Repositories\EnvRepository,
+    Repositories\CandRepository,
     Services\PannelAdmin
 };
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 class CandidateController extends Controller
 {
-    /**
-     * Display a listing of the resource.
+   use Indexable;
+
+   /**
+     * Create a new ContactController instance.
      *
-     * @return \Illuminate\Http\Response
+     * @param  \App\Repositories\CandRepository $repository
      */
-    public function index()
+    public function __construct(CandRepository $repository)
     {
-        //
+        $this->repository = $repository;
+
+        $this->table = 'candidates';
     }
 
     /**
@@ -32,7 +35,7 @@ class CandidateController extends Controller
     public function create()
     {
         //
-        return view('back.candidates.inscription-candidate');
+        return view('back.candidates.create');
     }
 
     /**
@@ -46,25 +49,30 @@ class CandidateController extends Controller
         //
 
         
-
+        $parametre = DB::table('parametre')->where('is_active', 1)->first();
+        $mytime = Carbon::now();
        
          $id = DB::table('candidates')->insertGetId(
         ['nom' => $request->input('nom'), 
         'prenom' => $request->input('prenom'),
-        'date-nais' =>$request->input('datenais'),
-        'lieu-nais' =>$request->input('lieunais'),
+        'date_nais' =>$request->input('datenais'),
+        'lieu_nais' =>$request->input('lieunais'),
         'email' =>$request->input('email') ,
         'numtel' =>$request->input('numtel') ,
-        'niveau-etude' =>$request->input('niveau'),
-        'region-origine' =>$request->input('ro') ,
-        'region-concours' => $request->input('rc'),
-        'paysderesidence'=> $request->input('pays'), 
-        'annee' =>$request->input('annee'),
-        'shortdesc' => substr($request->input('description') ,0,50),
-        'longdesc' =>$request->input('description') , 
-        'facebook-link' =>$request->input('fb') , 
-         'instagram-link' =>$request->input('in') ,
-          'twitter-link' =>$request->input('tw')
+        'niveau_etude' =>$request->input('niveau'),
+        'region_origine' =>$request->input('ro') ,
+        'regionconcours' => $request->input('rc'),
+        'pays_de_residence'=> $request->input('pays'), 
+        'web_id' =>$request->input('nom') ,
+        'annee' =>$parametre->annee,
+        'short_desc' => substr($request->input('description') ,0,50),
+        'long_desc' =>$request->input('description') , 
+        'facebook_link' =>$request->input('fb') , 
+        'instagram_link' =>$request->input('in') ,
+        'twitter_link' =>$request->input('tw'),
+        'video_link' =>$request->input('vi'),
+        'updated_at'=> $mytime,
+        'created_at'=> $mytime
           ]
 );
         
@@ -85,9 +93,9 @@ class CandidateController extends Controller
             $first->move(public_path().'/images/2019/',$id.$chemin); 
 
             DB::table('pictures-path')->insertGetId(
-    ['chemin' => $id.$chemin,
-     'id-candidate' => $id , 
-     'type' => '44'
+    ['chemin' => public_path().'/images/2019/',$id.$chemin,
+     'id_candidate' => $id , 
+     'type' => '4*4'
     ]
 );
 
@@ -109,8 +117,8 @@ class CandidateController extends Controller
                 $request->file('p'.$i)->move(public_path().'/images/2019/',$id.$chemin); 
 
                           DB::table('pictures-path')->insertGetId(
-                         ['chemin' => $id.$chemin,
-                         'id-candidate' => $id , 
+                         ['chemin' => public_path().'/images/2019/',$id.$chemin,
+                         'id_candidate' => $id , 
                           'type' => 'portrait'
     ]
 
@@ -142,7 +150,10 @@ class CandidateController extends Controller
      */
     public function edit($id)
     {
-        //
+        //requette pour gey les infos du dit user
+        $candidate = DB::table('candidates')->where('id', $id)->get()->first();
+        //echo $candidate->nom;
+         return view('back.candidates.edit', compact('candidate'));
     }
 
     /**
@@ -152,9 +163,43 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CandidateRequest $request, $id)
     {
-        //
+        //requette de mise a jourDB::table('users')
+        $parametre = DB::table('parametre')->where('is_active', 1)->first();
+        $mytime = Carbon::now();
+        $finaliste;
+        if ($request->input('finaliste'))
+            $finaliste = true;
+        else
+            $finaliste = false;
+
+        DB::table('candidates')
+            ->where('id', $id)
+            ->update(['nom' => $request->input('nom'),
+                'prenom' => $request->input('prenom'),
+                'date_nais' =>$request->input('datenais'),
+                'lieu_nais' =>$request->input('lieunais'),
+                'email' =>$request->input('email') ,
+                'numtel' =>$request->input('numtel') ,
+                'niveau_etude' =>$request->input('niveau'),
+                'region_origine' =>$request->input('ro') ,
+                'regionconcours' => $request->input('rc'),
+                'pays_de_residence'=> $request->input('pays'),
+                'web_id'=> $request->input('web_id'),
+                'annee' =>$parametre->annee,
+                'short_desc' => substr($request->input('description') ,0,50),
+                'long_desc' =>$request->input('description') , 
+                'finaliste' =>$finaliste, 
+                'facebook_link' =>$request->input('fb') , 
+                'instagram_link' =>$request->input('in') ,
+                'twitter_link' =>$request->input('tw'),
+                'video_link' =>$request->input('vi'),
+                'updated_at'=> $mytime
+                // Ajouter la date du système pour le updated-at 
+
+                ]);
+        return redirect('admin')->with('status', __('Modification effectuee!'));
     }
 
     /**

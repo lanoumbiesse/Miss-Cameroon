@@ -51,7 +51,7 @@ class HomeController extends Controller
        //dd($request->ip());
 
       $statut='null';
-      $parametre=\DB::table('parametre')->where('isactive',1)->first();
+      $parametre=\DB::table('parametre')->where('is_active',1)->first();
 
       $candidates= Candidate::where('candidates.annee',$parametre->annee)
                ->LeftJoin('vote', 'candidates.id', '=', 'vote.id_candidate')

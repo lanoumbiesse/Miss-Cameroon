@@ -7,8 +7,8 @@ $.ajaxSetup({
 
 var back = (function () {
 
-    var order = 'created_at'
-    var direction = 'desc'
+    var order = 'nom'
+    var direction = 'asc'
 
     var pagination = function (event, that, errorAjax) {
         event.preventDefault()
@@ -109,8 +109,8 @@ var back = (function () {
             })
             .fail(function () {
                 fail(errorAjax)
-            }
-        )
+            })
+        
     }
 
     var spin = function () {
@@ -137,6 +137,8 @@ var back = (function () {
 
     var buildParameters = function () {
         return {
+            regionconcours: getCheckboxValueByName('regionconcours'),
+            finaliste: getCheckboxValueByName('finaliste'),
             role: getCheckboxValueByName('role'),
             valid: getCheckboxValueByName('valid'),
             confirmed: getCheckboxValueByName('confirmed'),

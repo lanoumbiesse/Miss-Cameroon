@@ -38,12 +38,13 @@ class CandidateRequest extends FormRequest
         'fb'  => 'required|url',
         'tw'  => 'required|url',
         'in'  => 'required|url',
+        'vi'  => 'required|url',
         'description' => 'required|min:50|max:520|string',
-        'annee'  => 'required|min:4|numeric',
-        'first' => 'required|image',
-        'p1' => 'image|mimes:jpeg,png,jpg,gif,svg',
-        'p2' => 'image|mimes:jpeg,png,jpg,gif,svg',
-        'p3' => 'image|mimes:jpeg,png,jpg,gif,svg'
+        'web_id'  => 'min:2|string',
+        'first' => 'image|mimes:jpeg,png,jpg,gif',
+        'p1' => 'image|mimes:jpeg,png,jpg,gif',
+        'p2' => 'image|mimes:jpeg,png,jpg,gif',
+        'p3' => 'image|mimes:jpeg,png,jpg,gif'
         ];
     }
 }

@@ -23,6 +23,9 @@ Route::name('home')->get('/', 'Front\HomeController@index');
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
 
+// Inscriptions
+Route::resource('inscriptions', 'Back\InscriptionsController', ['only' => ['store']]);
+
 // Posts and comments
 Route::prefix('posts')->namespace('Front')->group(function () {
     Route::name('posts.display')->get('{slug}', 'PostController@show');
@@ -104,8 +107,23 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         // Settings
         Route::name('settings.edit')->get('settings', 'AdminController@settingsEdit');
         Route::name('settings.update')->put('settings', 'AdminController@settingsUpdate');
-        Route::resource('candidate', 'CandidateController');
-        Route::post('candidate', 'CandidateController@store')->name('candidatestore');
+
+
+
+        // candidates
+        Route::resource('candidates', 'CandidateController');
+        Route::post('candidates', 'CandidateController@store')->name('candidatestore');
+
+
+        // votes
+        Route::resource('votes', 'VoteController');
+       
+        // photo
+        Route::resource('photos', 'PhotoController');
+
+
+        Route::resource('inscriptions', 'InscriptionsController', ['only' => ['index']]);
+        Route::name('inscriptions.ajouter')->post('inscriptions', 'InscriptionsController@ajouter');
 
     });
 
