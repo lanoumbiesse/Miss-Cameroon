@@ -150,13 +150,68 @@
 								<div class="text-center py-1">
 								<p class="btext titresection text-center">Vous avez <strong>1</strong> vote gratuit.</p>
 								<hr class="my-0">
-								<a href="{{url('/vote/free/'.$candidate->id)}}" class="btn btn-secondary">Voter</a>
+								<a href="{{url('/vote/free/'.$candidate->id.'/v')}}" class="btn btn-secondary">Voter</a>
 								<hr class="my-0">
 								@else
 								<p class="btext titresection text-center">Vous avez déja utiliser votre vote gratuit de la journée.</p>
 								@endif
 							  <p class="btext titresection text-center">Continuer de voter en utilisant nos offres payantes</p>
-								</div>
+
+                <table border="1" class="col-md-12 ml-auto mr-auto">
+                  <tr style="color:black;">
+                  <th> 1 vote = </th>
+                  <th> 100 XAF </th>
+                  </tr>
+                  <tr>
+                  <td>  Au dela 1000 XAF </td>
+                  <td> 2% de bonus </td>
+                  </tr>
+                  <tr>
+                  <td>   Au dela de 5000 XAF </td>
+                  <td> 3% de bonus </td>
+                  </tr>
+                  <tr>
+                  <td>   Au dela de 10000 XAF </td>
+                  <td> 5% de bonus </td>
+                </tr>
+                <tr>
+                <td>   Au dela de 20000 XAF </td>
+                <td> 7% de bonus </td>
+                </tr>
+                <tr>
+                <td>   Au dela de 50000 XAF </td>
+                <td> 10% de bonus </td>
+                </tr>
+                <tr>
+                <td>   Au dela de 100000 XAF </td>
+                <td> 15% de bonus </td>
+                </tr>
+                <tr>
+                <td>   Au dela de 200000 XAF </td>
+                <td> 20% de bonus </td>
+                </tr>
+                </table>
+
+                <div class="form-row col-md-12 ml-auto mr-auto">
+       <label for="c1">Entrez le montant</label>
+       <input type="number" value="100" min="100" step="100" class="currency" id="c1" />
+      </div>
+      <div class="form-row col-md-12 ml-auto mr-auto">
+<label for="c1">Entrez le numéro de téléphone</label>
+<input type="text" value="67668xxx"  class="currency" id="c2" />
+</div>
+<h3> Payez avec:</h3>
+<div class="col-md-12 row operateurrow">
+  <div class="col-md-6 ml-auto mr-auto">
+    <button><img src="{{asset('/images/mtn-money.jpg')}}"></button>
+
+  </div>
+  <div class="col-md-6 ml-auto mr-auto">
+    <button><img src="{{asset('/images/orange-money.jpg')}}" height="64"></button>
+
+  </div>
+</div>
+                </div>
 							@endif
             </div>
 
@@ -182,6 +237,8 @@
       </div>
       <div class="modal-body">
        <p class="btext titresection text-center">Continuer de voter à tout moment en utilisant nos offres payantes</p>
+
+
       </div>
 
     </div>

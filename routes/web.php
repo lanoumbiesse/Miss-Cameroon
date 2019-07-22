@@ -47,7 +47,7 @@ Auth::routes();
 Route::name('facebookurl')->get('getfacebookurl', 'Front\FacebookController@prelogin');
 Route::name('facebook')->get('facebook/callback', 'Front\FacebookController@login');
 Route::name('facebooklog')->post('facebook', 'Front\FacebookController@logininfacebook');
-Route::name('votefree')->get('vote/free/{id}', 'Front\HomeController@votefree');
+Route::name('votefree')->get('vote/free/{id}/{id1?}', 'Front\HomeController@votefree');
 Route::name('profile')->get('profile/{id}', 'Front\HomeController@profile');
 
 

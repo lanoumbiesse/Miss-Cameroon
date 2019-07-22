@@ -76,11 +76,12 @@ class HomeController extends Controller
         return view('front.index', compact('candidates','parametre','statut'));
     }
 
-    public function votefree(Request $request,$id){
+    public function votefree(Request $request,$id,$id1=null){
 
       if(Auth::check()){
        $parametre=\DB::table('parametre')->where('isactive',1)->first();
 
+       $candidate=Candidate::find($id);
         $vote=new vote();
         $vote->id_user=Auth::user()->id;
         $vote->id_candidate=$id;
@@ -91,6 +92,8 @@ class HomeController extends Controller
         $vote->ip=$request->ip();
         $vote->annee=$parametre->annee;
         $vote->save();
+
+        if(isset($id1)) return redirect('profile/'.$candidate->web_id)->with('successfree', 'Votre vote a été enregistré, continuez de voter en utilisant nos offres payantes.');
 
         return redirect('/')->with('successfree', 'Votre vote a été enregistré, continuez de voter en utilisant nos offres payantes.');
 
