@@ -41,5 +41,10 @@ return [
         'create' => 'categoryCreate',
         'edit' => 'categoryEdit',
     ],
+    'candidates' => [
+        'index' => 'candidatesGestion',
+        'create' => 'candidatesInscrire',
+        'edit' => 'candidatesEditer',
+    ],
 
 ];

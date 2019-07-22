@@ -97,8 +97,19 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         // Settings
         Route::name('settings.edit')->get('settings', 'AdminController@settingsEdit');
         Route::name('settings.update')->put('settings', 'AdminController@settingsUpdate');
-        Route::resource('candidate', 'CandidateController');
-        Route::post('candidate', 'CandidateController@store')->name('candidatestore');
+
+
+
+        // candidates
+        Route::resource('candidates', 'CandidateController');
+        Route::post('candidates', 'CandidateController@store')->name('candidatestore');
+
+
+        // votes
+        Route::resource('votes', 'VoteController');
+       
+        // photo
+        Route::resource('photos', 'PhotoController');
 
     });
 

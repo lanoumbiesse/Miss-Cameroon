@@ -157,34 +157,18 @@ desired effect
             ],
           ])
 
-          @include('back.partials.treeview', [
-            'icon' => 'envelope',
-            'type' => 'contact',
-            'items' => [
-              [
-                'route' => route('contacts.index'),
-                'command' => 'list',
-                'color' => 'blue',
-              ],
-              [
-                'route' => route('contacts.index', ['new' => 'on']),
-                'command' => 'new',
-                'color' => 'yellow',
-              ],
-            ],
-          ])
           
            @include('back.partials.treeview', [
             'icon' => 'user',
             'type' => 'Candidate',
             'items' => [
               [
-                'route' => route('candidate.index'),
+                'route' => route('candidates.index'),
                 'command' => 'Lister',
                 'color' => 'blue',
               ],
               [
-                'route' => route('candidate.create'),
+                'route' => route('candidates.create'),
                 'command' => 'ajouter',
                 'color' => 'yellow',
               ],
@@ -192,53 +176,22 @@ desired effect
           ])
 
           @include('back.partials.treeview', [
-            'icon' => 'comment',
-            'type' => 'comment',
+            'icon' => 'list',
+            'type' => 'Vote',
             'items' => [
               [
-                'route' => route('comments.index'),
-                'command' => 'list',
+                'route' => route('votes.index'),
+                'command' => 'Lister',
                 'color' => 'blue',
-              ],
-              [
-                'route' => route('comments.index', ['new' => 'on']),
-                'command' => 'new',
-                'color' => 'yellow',
               ],
             ],
           ])
 
-        <li><a href="{{ route('categories.index') }}"><i class="fa fa-list"></i> <span>@lang('Categories')</span></a></li>
+
 
         @endadmin
 
-        @include('back.partials.treeview', [
-          'icon' => 'file-text',
-          'type' => 'post',
-          'items' => [
-            [
-              'route' => route('posts.index'),
-              'command' => 'list',
-              'color' => 'blue',
-            ],
-            [
-              'route' => route('posts.index', ['new' => 'on']),
-              'command' => 'new',
-              'color' => 'yellow',
-            ],
-            [
-              'route' => route('posts.create'),
-              'command' => 'create',
-              'color' => 'green',
-            ],
-          ],
-        ])
 
-        <li><a href="{{ route('medias.index') }}"><i class="fa fa-image"></i> <span>@lang('Medias')</span></a></li>
-
-        @admin
-          <li><a href="{{ route('settings.edit') }}"><i class="fa fa-cog"></i> <span>@lang('Settings')</span></a></li>
-        @endadmin
 
         @if ($countNotifications)
           <li><a href="{{ route('notifications.index', [auth()->id()]) }}"><i class="fa fa-bell"></i> <span>@lang('Notifications')</span></a></li>

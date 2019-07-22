@@ -27,11 +27,11 @@ return [
         'icon' => 'user',
         'url' => '/admin/users',
     ],
-    'candidate' =>
+    'candidates' =>
     [
-        'name' => 'candidate',
+        'name' => 'candidates',
         'icon' => 'user',
-        'url' => '/admin/candidate',
+        'url' => '/admin/candidates',
     ],
     'edit' =>
     [
@@ -78,6 +78,18 @@ return [
         'name' => 'categories',
         'icon' => 'list',
         'url' => '/admin/categories',
+    ],
+    'votes' =>
+    [
+        'name' => 'votes',
+        'icon' => 'list',
+        'url' => '/admin/votes',
+    ],
+    'photos' =>
+    [
+        'name' => 'photos',
+        'icon' => 'media',
+        'url' => '/admin/photos',
     ],
 
 ];
