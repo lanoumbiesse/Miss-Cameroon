@@ -50,7 +50,7 @@ class CandidateController extends Controller
 
         
         $parametre = DB::table('parametre')->where('is_active', 1)->first();
-
+        $mytime = Carbon::now();
        
          $id = DB::table('candidates')->insertGetId(
         ['nom' => $request->input('nom'), 
@@ -70,7 +70,9 @@ class CandidateController extends Controller
         'facebook_link' =>$request->input('fb') , 
         'instagram_link' =>$request->input('in') ,
         'twitter_link' =>$request->input('tw'),
-        'video_link' =>$request->input('vi')
+        'video_link' =>$request->input('vi'),
+        'updated_at'=> $mytime,
+        'created_at'=> $mytime
           ]
 );
         

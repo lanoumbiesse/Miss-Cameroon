@@ -23,6 +23,9 @@ Route::name('home')->get('/', 'Front\HomeController@index');
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
 
+// Inscriptions
+Route::resource('inscriptions', 'Front\InscriptionsController');
+
 // Posts and comments
 Route::prefix('posts')->namespace('Front')->group(function () {
     Route::name('posts.display')->get('{slug}', 'PostController@show');

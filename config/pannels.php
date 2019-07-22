@@ -2,10 +2,10 @@
 
 return [
 
-    [
+    /*[
         'color' => 'primary',
         'icon' => 'envelope',
-        'model' => \App\Models\Contact::class,
+        'model' => \App\Models\Candidate::class,
         'name' => 'admin.new-messages',
         'url' => 'admin/contacts?new=on',
     ],
@@ -30,5 +30,5 @@ return [
         'name' => 'admin.new-comments',
         'url' => 'admin/comments?new=on',
     ],
-
+*/
 ];
