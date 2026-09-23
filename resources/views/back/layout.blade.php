@@ -189,22 +189,30 @@ desired effect
 
             @include('back.partials.treeview', [
             'icon' => 'user',
-            'type' => 'inscription',
+            'type' => 'Inscription',
             'items' => [
               [
-                'route' => route(inscriptions.index'),
+                'route' => route('inscriptions.index'),
                 'command' => 'Lister',
                 'color' => 'blue',
               ],
-              [
-                'route' => route('inscriptions.ajouter'),
-                'command' => 'ajouter',
-                'color' => 'yellow',
-              ],
+           
             ],
           ])
-
-
+             @include('back.partials.treeview', [
+            'icon' => 'user',
+            'type' => 'Billet',
+            'items' => [
+              [
+                'route' => route('billets.index'),
+                'command' => 'Lister',
+                'color' => 'blue',
+              ],
+               
+           
+            ],
+          ])
+ 
 
         @endadmin
 

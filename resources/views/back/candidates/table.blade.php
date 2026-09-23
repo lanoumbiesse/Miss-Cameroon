@@ -9,13 +9,11 @@
                 <th>@lang('Nom')</th>
                 <th>@lang('Prenom')</th>
                 <th>@lang('Votes')</th>
-                <th>@lang('Date de naissance')</th>
-                <th>@lang('Lieu de naissance')</th>
-                <th>@lang('Email')</th>
-                <th>@lang('Numero de tel')</th>
-                <th>@lang('Pays de residence')</th>
+                <th>@lang('age')</th>
+                
                 <th>@lang('Photo')</th>
                 <th>@lang('Editer')</th>
+                <th>@lang('Supprimer')</th>
                 <th></th>
             </tr>
             </thead>
@@ -24,14 +22,13 @@
                     <td>{{ $candidate->nom }}</td>
                     <td>{{ $candidate->prenom }}</td>
                     <td>{{ $candidate->nbvote}}</td>
-                    <td>{{ $candidate->date_nais }} </td>
-                    <td>{{ $candidate->lieu_nais }} </td>
-                      <td>{{ $candidate->email }} </td>
-                    <td>{{ $candidate->numtel }}</td>
-                    <td>{{ $candidate->pays_de_residence }}</td>
-                     <td><a href="{{ route('photos.show', [$candidate->id]) }}" role="button" title="@lang('Voir Photo')"></a></td>
+                    <td>{{ $candidate->age }} </td>
+                   
+                   
+                     <td><a href="{{ route('photos.show', [$candidate->id]) }}" role="button" title="@lang('Voir Photo')"> Voir Photo</a></td>
 
                     <td><a class="btn btn-warning btn-xs btn-block" href="{{ route('candidates.edit', [$candidate->id]) }}" role="button" title="@lang('Editer')"><span class="fa fa-edit"></span></a></td>
+                     <td><a class="btn btn-warning btn-xs btn-block" href="{{ route('candidates.destroy', [$candidate->id]) }}" role="button" title="@lang('supprimer')"><span class="fa fa-trash"></span></a></td>
                 </tr>
             </tbody>
         </table>

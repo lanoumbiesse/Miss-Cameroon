@@ -1,6 +1,12 @@
 @extends('front.layout')
+@section('css')
 
+	<link href="{{asset('css/home.css')}}" rel="stylesheet">
+
+
+@endsection
 @section('main')
+<div class="container" >
    <section id="content-wrap">
         <div class="row">
             <div class="col-twelve">
@@ -28,11 +34,11 @@
                             @component('front.components.error')
                                 {{ $errors->first('log') }}
                             @endcomponent
-                        @endif   
+                        @endif
                         <input id="log" type="text" placeholder="@lang('Login')" class="full-width" name="log" value="{{ old('log') }}" required autofocus>
                         <input id="password" type="password" placeholder="@lang('Password')" class="full-width" name="password" required>
                         <label class="add-bottom">
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> 
+                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                             <span class="label-text">@lang('Remember me')</span>
                         </label>
                         <input class="button-primary full-width-on-mobile" type="submit" value="@lang('Login')">
@@ -49,4 +55,5 @@
             </div>
         </div>
     </section>
+  </div>
 @endsection

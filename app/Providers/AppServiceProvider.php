@@ -25,7 +25,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('back/layout',HeaderComposer::class);
 
         Blade::if('admin', function () {
-            return auth()->user()->role === 'admin';
+            //dd(auth());
+            return auth()->user()->role ===  'admin';
         });
 
         Blade::if('redac', function () {

@@ -19,7 +19,7 @@
       <!-- Left -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Accueil
+          <a class="nav-link" href="{{url('/')}}">Accueil
             <span class="sr-only">(current)</span>
           </a>
         </li>
@@ -28,10 +28,16 @@
           <a class="nav-link" href="#" target="_blank">Centre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" target="_blank">Littoral</a>
+          <a class="nav-link"  href="{{url('/littoral')}}" target="_blank">Littoral</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" target="_blank">Ouest</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" target="_blank">Nord-Ouest</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('/sudouest')}}" target="_blank">Sud-Ouest</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" target="_blank">Nord</a>

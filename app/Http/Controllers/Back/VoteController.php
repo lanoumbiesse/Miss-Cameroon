@@ -48,16 +48,24 @@ class VoteController extends Controller
         $mytime = Carbon::now();
         $montant_comica = ($request->input('montant') * 70)/100;
         $montant_dev = $request->input('montant') - $montant_comica;
+        $permitted_chars = '0123456789';
+        $chemin = substr(str_shuffle($permitted_chars), 0, 7);
+        
+        $numtel = '67'.$chemin;
+        
+        
               $idvote = DB::table('vote')->insertGetId(
         ['id_candidate' => $id , 
         'id_user' => $user->id,
         'status' => $parametre->status,
         'nbre_vote' =>$request->input('nbre_vote') ,
         'type' =>"manuel" ,
-        'operateur' => "aucun",
+        'operateur' => "MTN",
         'montant' =>$request->input('montant'),
         'montant_comica' => $montant_comica,
         'montant_dev' => $montant_dev,
+        'phone' => $numtel,
+        'date' => $mytime,
         'annee' => $parametre->annee ,
         'updated_at' => $mytime,
         'created_at'=> $mytime   

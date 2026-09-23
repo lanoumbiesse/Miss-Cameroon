@@ -53,3 +53,11 @@ footer {
 .btext{
       color: #000000b8!important;
 }
+
+.carousel-inner{
+  background-color: white;
+  border-radius: 10px;
+}
+#netapayer{
+  font-weight: bold;
+}

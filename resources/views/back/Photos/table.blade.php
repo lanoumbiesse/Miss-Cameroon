@@ -7,7 +7,7 @@
             <tr>
                 <th>@lang('Photo')</th>
                 <th>@lang('Type')</th>
-                <th>@lang('Supprimer')</th>
+                
                 <th></th>
             </tr>
             </thead>
@@ -15,7 +15,7 @@
                 <tr>
                     <td><a href = "{{$path->chemin}}" > voir photo</a></td>
                     <td>{{ $path->type }}</td>
-                     <td><a class="btn btn-danger btn-xs btn-block" href="{{ route('photos.destroy', [$photo->id]) }}" role="button" title="@lang('Supprimer')"><span class="fa fa-remove"></span></a></td>
+                     
                 </tr>
             </tbody>
         </table>

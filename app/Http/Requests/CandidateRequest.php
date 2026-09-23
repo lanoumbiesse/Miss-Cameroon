@@ -25,26 +25,28 @@ class CandidateRequest extends FormRequest
     {
         return [
             //
-        'nom' => 'required|min:2|max:20|string',
-        'prenom' => 'required|min:3|max:20|string',
-        'datenais' => 'required|date',
-        'lieunais' => 'required|min:3|max:20|string',
-        'pays' => 'required|min:3|max:20|string',
+        'nom' => 'required|min:2|max:120|string',
+        'prenom' => 'required|min:3|max:120|string',
+        'datenais' => 'nullable|numeric',
+        'numcompet' => 'required|numeric',
+        'height' => 'nullable|string',
         'ro'  => 'required',
         'rc' => 'required',
         'niveau'  => 'required',
-        'numtel'  => 'required|min:13|max:60|string',
-        'email'  => 'required|email',
-        'fb'  => 'required|url',
-        'tw'  => 'required|url',
-        'in'  => 'required|url',
-        'vi'  => 'required|url',
-        'description' => 'required|min:50|max:520|string',
-        'web_id'  => 'min:2|string',
-        'first' => 'image|mimes:jpeg,png,jpg,gif',
-        'p1' => 'image|mimes:jpeg,png,jpg,gif',
-        'p2' => 'image|mimes:jpeg,png,jpg,gif',
-        'p3' => 'image|mimes:jpeg,png,jpg,gif'
+        'bust'  => 'nullable|string',
+        'waist'  => 'nullable|string',
+        'hips'  => 'nullable|string',
+        'shoes'  => 'nullable|string',
+        'eyes'  => 'nullable|string',
+        'fb'  => 'nullable|url',
+        'tw'  => 'nullable|url',
+        'in'  => 'nullable|url',
+        'vi'  => 'nullable|url',
+        'description' => 'nullable|max:520|string',
+        'first' => 'required|image|mimes:jpeg,png,jpg,gif',
+        'p1' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+        'p2' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+        'p3' => 'nullable|image|mimes:jpeg,png,jpg,gif'
         ];
     }
 }

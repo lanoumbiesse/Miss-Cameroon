@@ -9,7 +9,6 @@ class Vote extends Model
 {
     //
     protected $table = 'vote';
-    public $timestamps = false;
 
     public function candidate() {
       return $this->belongsTo('App\Models\Candidate', 'id_candidate');

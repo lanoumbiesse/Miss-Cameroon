@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'file'),
+    'driver' => env('SESSION_DRIVER', 'database'),
 
     /*
     |--------------------------------------------------------------------------
@@ -151,7 +151,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', 'localhost'),
+    'domain' => env('SESSION_DOMAIN', 'vote.misscameroun.org'),
 
     /*
     |--------------------------------------------------------------------------

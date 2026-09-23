@@ -59,7 +59,11 @@
 
 <body id="top">
 @include('front.navmenu')
+
+@if(count($candidate->pictures()->get())>1)
 @include('front.carousel1')
+@else @include('front.carousel')
+@endif
 
    @yield('main')
 
@@ -86,9 +90,8 @@
 	     <!-- Social icons -->
 
 	     <!--Copyright-->
-	     <div class="footer-copyright py-3">
-	       © 2019 Copyright:
-	       <a href="#" target="_blank"> Weloobe.com </a>
+	    <div class="footer-copyright py-3">
+	       © contact:--<i class="fab fa-whatsapp"></i>--237655704008----<i class="fa fa-envelope"></i>--giresseayefou@gmail.com
 	     </div>
 	     <!--/.Copyright-->
 

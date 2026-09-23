@@ -29,17 +29,15 @@ class InscriptionsRequest extends FormRequest
         'prenom' => 'required|min:3|max:20|string',
         'age' => 'required|numeric',
         'email'  => 'required|email',
-        'numtel'  => 'required|max:60|string',
-        'niveau'  => 'required',
+        'numtel'  => 'required|min:7|max:60|string',
+        'niveau'  => 'required|min:2|string',
         'profession' => 'required|min:4|max:20|string',
         'ville'  => 'required|min:2|string',
-        'quartier'  => 'required|min:2|string',
-        'facebook'  => 'required|url',
-        'instagram'  => 'required|url',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+        'pays'  => 'required|min:3|string',
+        'image' => 'required',
         'Ro'  => 'required',
         'Rc' => 'required',
-        'pays'  => 'required|min:2|string'
+        
         
         ];
     }

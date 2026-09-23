@@ -9,10 +9,11 @@ class SocialFacebookAccountService
 {
     public function createOrGetUser(ProviderUser $providerUser)
     {
-        //dd($providerUser->getAvatar());
+        //dd($providerUser);
         $account = SocialFacebookAccount::whereProvider('facebook')
             ->whereProviderUserId($providerUser->getId())
             ->first();
+           
 
         if ($account) {
             return $account->user;
@@ -25,8 +26,9 @@ class SocialFacebookAccountService
             ]);
 
             $user=null;
+           
 
-            if($providerUser->getEmail())
+            if($providerUser->getEmail() && !empty($providerUser->getEmail()))
             $user = User::whereEmail($providerUser->getEmail())->first();
             else $user = User::where('username',$providerUser->getName())->first();
 
@@ -42,9 +44,10 @@ class SocialFacebookAccountService
                   $user->valid=1;
                   $user->role='user';
                   $user->save();*/
+                  //dd( $providerUser->getName());
 
               $user = User::create([
-                    'email' => $providerUser->getEmail() == '' ? '' : $providerUser->getEmail(),
+                    'email' => $providerUser->getEmail() == '' ? NULL : $providerUser->getEmail(),
                     'username' => $providerUser->getName(),
                     'name' => $providerUser->getName(),
                     'password' => bcrypt('giresseayefson'),

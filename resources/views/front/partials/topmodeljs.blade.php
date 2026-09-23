@@ -1,0 +1,13 @@
+<script src="{{ asset('topmodel/js/jquery.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{ asset('topmodel/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/jquery.stellar.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/aos.js')}}"></script>
+<script src="{{ asset('topmodel/js/jquery.animateNumber.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/bootstrap-datepicker.js')}}"></script>
+<script src="{{ asset('topmodel/js/scrollax.min.js')}}"></script>
+<script src="{{ asset('topmodel/js/main.js')}}"></script>

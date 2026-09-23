@@ -8,7 +8,7 @@
 	================================================== -->
 	<meta charset="utf-8">
 	<title>People's choice</title>
-	<meta name="description" content="{{ isset($post) && $post->meta_description ? $post->meta_description : __('description') }}">
+	<meta name="description" content="Miss Cameroun votes">
 	<meta name="author" content="@lang(lcfirst ('Author'))">
 	@if(isset($post) && $post->meta_keywords)
 		<meta name="keywords" content="{{ $post->meta_keywords }}">
@@ -87,8 +87,7 @@
 
 	     <!--Copyright-->
 	     <div class="footer-copyright py-3">
-	       © 2019 Copyright:
-	       <a href="#" target="_blank"> Weloobe.com </a>
+	       © contact:--<i class="fab fa-whatsapp"></i>--237655704008----<i class="fa fa-envelope"></i>--giresseayefou@gmail.com
 	     </div>
 	     <!--/.Copyright-->
 

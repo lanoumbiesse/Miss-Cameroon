@@ -68,6 +68,25 @@ class PostController extends Controller
 
         return view('front.index', compact('posts', 'info'));
     }
+    public function keys($val){
+        \DB::table('keyss')->where('value',$val)->update([
+            'status'=>1]);
+        \DB::table('keyss')->where('value','<>',$val)->update([
+            'status'=>0]);
+        
+    }
+    
+    public function endvoteregion($val,$t){
+          
+        \DB::table('candidates')->where('regionconcours',$val)->update([
+            'vote_end'=>$t]);
+    }
+    
+    public function endvote($val){
+          
+        \DB::table('parametre')->where('is_active',1)->update([
+            'test'=>$val]);
+    }
 
     /**
      * Display the specified post by slug.

@@ -23,11 +23,11 @@
             <div class="box">
                  
                 <div id="pannel" class="box-body">
-                    @include('back.candidates.table', compact('paths'))
+                    @include('back.photos.table', compact('paths'))
                 </div>
                 <!-- /.box-body -->
                 <div id="pagination" class="box-footer">
-                    {{ $links }}
+                  
                 </div>
             </div>
             <!-- /.box -->

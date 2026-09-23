@@ -24,7 +24,7 @@ return [
         'valid' => false,
     ],
     'candidates' => [
-        'order' => 'nom',
+        'order' => 'created_at',
         'direction' => 'asc',
         'regionconcours' => 'all',
         'finaliste' => false,
@@ -36,9 +36,18 @@ return [
     ],
 
     'inscriptions' => [
+        'order' => 'nom',
+        'direction' => 'desc',
+        'regionconcours' => 'all',
+        'finaliste' => false,
+        'status' => false,
+    ],
+    
+     'billets' => [
         'order' => 'created_at',
         'direction' => 'desc',
         'regionconcours' => 'all',
+        
     ],
 
 ];

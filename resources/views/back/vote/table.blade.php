@@ -7,13 +7,7 @@
             <tr>
                 <th>@lang('Nom candidate')</th>
                 <th>@lang('Nombre de vote')</th>
-                <th>@lang('Periode')</th>
-                <th>@lang('type')</th>
-                <th>@lang('Montant')</th>
-                <th>@lang('Montant COMICA')</th>
-                <th>@lang('Montant Dev')</th>
-                <th>@lang('Nom du votant')</th>
-                <th>@lang('Date')</th>
+               
                 <th></th>
             </tr>
             </thead>
@@ -21,13 +15,7 @@
                 <tr>
                     <td>{{ $votes->nomc }} {{ $votes->prenomc }} </td>
                     <td>{{ $votes->nbre_vote }}</td>
-                    <td>{{ $votes->status }} </td>
-                    <td>{{ $votes->type }}</td>
-                    <td>{{ $votes->montant }} </td>
-                      <td>{{ $votes->montant_comica }} </td>
-                    <td>{{ $votes->montant_dev }}</td>
-                    <td>{{ $votes->nomu }}</td>
-                   <td>{{ $votes->created_at }}</td>
+                    
                 </tr>
             </tbody>
         </table>

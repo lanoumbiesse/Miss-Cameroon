@@ -180,6 +180,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ElfinderServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        
+        //Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -231,6 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        //'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

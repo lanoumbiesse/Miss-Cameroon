@@ -18,7 +18,8 @@
       @if($picture->type!="44")
       @if($key==1)
       <div class="carousel-item active">
-        <div class="view" style="background-image: url(/{{$picture->chemin}}); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url({{$picture->chemin}}); background-size: contain;
+    background-position: center center;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -41,7 +42,8 @@
       @else
 
       <div class="carousel-item">
-        <div class="view" style="background-image: url(/{{$picture->chemin}}); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url({{$picture->chemin}}); background-size: contain;
+    background-position: center center;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">

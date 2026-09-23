@@ -27,7 +27,17 @@ height: 100%;
  padding-top: 2px;
 }
 .card__info .nbvotes {
-  float: right ;
+  right: 3px;
+  position: absolute;
+  margin: 0 auto;
+  margin-top: -2px;
+}
+.card__info .numb {
+  left: 3px;
+  position: absolute;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
 }
 
 .cards {
@@ -373,4 +383,26 @@ cursor: pointer;
 .operateurrow button img{
   max-width: 100px;
   height: auto;
+}
+
+
+
+.strikethough{
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #000;
+   line-height: 0.1em;
+   margin: 20px 0 20px;
+   color: black;
+}
+
+.strikethough span {
+    background:#fff;
+    padding:0 10px;
+    font-weight: bold;
+}
+
+.trhead td{
+  font-weight: bold !important;
+  color: black;
 }

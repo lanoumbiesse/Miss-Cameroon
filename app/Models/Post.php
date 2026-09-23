@@ -27,9 +27,9 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'title', 'slug', 'seo_title', 'excerpt', 'body', 'meta_description', 'meta_keywords', 'active', 'image', 'user_id'
-    ];
+    /*protected $fillable = [
+        'title', 'slug', 'seo_title', 'excerpt', 'body', 'active', 'user_id'
+    ];*/
 
     /**
      * One to Many relation

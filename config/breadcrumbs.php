@@ -98,5 +98,19 @@ return [
         'icon' => 'user',
         'url' => '/admin/inscriptions',
     ],
+    
+       'billets' =>
+    [
+        'name' => 'billets',
+        'icon' => 'user',
+        'url' => '/admin/billets',
+    ],
+    
+        'fanclubs' =>
+    [
+        'name' => 'fanclubs',
+        'icon' => 'user',
+        'url' => '/admin/fanclubs',
+    ],
 
 ];

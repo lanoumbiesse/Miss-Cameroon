@@ -32,18 +32,18 @@
                         </div>
                         
                           <div class="form-group {{ $errors->has('datenais') ? 'has-error' : '' }}">
-                          <label for="name">@lang('Date de naissance *')</label>
-                        <input id="datenais" type="text" placeholder="@lang('yyyy-mm-dd')" class="form-control" name="datenais" required>
+                          <label for="name">@lang('Age *')</label>
+                        <input id="datenais" type="text" placeholder="@lang('Age')" class="form-control" name="datenais" required>
                         </div>
 
-                        <div class="form-group {{ $errors->has('lieunais') ? 'has-error' : '' }}">
-                        <label for="name">@lang('Lieu de naissance *')</label>
-                        <input id="lieunais" type="text" class="form-control" name="lieunais" required>
+                        <div class="form-group {{ $errors->has('numcompet') ? 'has-error' : '' }}">
+                        <label for="name">@lang('Numero Competition *')</label>
+                        <input id="numcompet" type="text" class="form-control" name="numcompet" required>
                          </div>
 
-                         <div class="form-group {{ $errors->has('pays') ? 'has-error' : '' }}">
-                         <label for="name">@lang('Pays de residence *')</label>
-                        <input id="pays" type="text"  class="form-control" name="pays" required>
+                         <div class="form-group {{ $errors->has('height') ? 'has-error' : '' }}">
+                         <label for="name">@lang('Taille *')</label>
+                        <input id="height" type="text"  class="form-control" name="height">
                         </div>
 
                         <div class="form-group {{ $errors->has('ro') ? 'has-error' : '' }}">
@@ -65,7 +65,7 @@
                           <div class="form-group {{ $errors->has('rc') ? 'has-error' : '' }}">
                        <label for="rc">@lang('Region du concours *')</label>
                         <select id = "rc" name="rc" class="form-control" required>
-                        <option value="Adamoua">Null</option>
+                        <option value="Diaspora">Diaspora</option>
                         <option value="Adamoua">Adamoua</option>
                         <option value="Centre">Centre</option>
                         <option value="Extreme-nord">Extreme-nord</option>
@@ -94,40 +94,55 @@
                         </select>
                         </div>
                        
-                        <div class="form-group {{ $errors->has('numtel') ? 'has-error' : '' }}">
-                        <label for="numtel">@lang('Numero de telephone*')</label>
-                        <input id="numtel" type="text" class="form-control" name="numtel" required>
+                        <div class="form-group {{ $errors->has('bust') ? 'has-error' : '' }}">
+                        <label for="bust">@lang('Bust*')</label>
+                        <input id="bust" type="text" class="form-control" name="bust">
                          </div>
 
 
-                         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                         <label for="email">@lang('Email *')</label>
-                         <input id="email" type="email" placeholder="@lang('Email *')" class="form-control" name="email" required>
+                         <div class="form-group {{ $errors->has('waist') ? 'has-error' : '' }}">
+                         <label for="waist">@lang('Waist *')</label>
+                         <input id="waist" type="text" placeholder="@lang('Waist *')" class="form-control" name="waist">
+                         </div>
+                         
+                          <div class="form-group {{ $errors->has('hips') ? 'has-error' : '' }}">
+                         <label for="name">@lang('hips *')</label>
+                         <input id="hips" type="text" placeholder="@lang('Hips *')" class="form-control" name="hips">
+                         </div>
+                         
+                          <div class="form-group {{ $errors->has('shoes') ? 'has-error' : '' }}">
+                         <label for="name">@lang('Shoes *')</label>
+                         <input id="shoes" type="text" placeholder="@lang('Shoes *')" class="form-control" name="shoes">
+                         </div>
+                         
+                          <div class="form-group {{ $errors->has('eyes') ? 'has-error' : '' }}">
+                         <label for="name">@lang('Eyes *')</label>
+                         <input id="eyes" type="text" placeholder="@lang('Eyes*')" class="form-control" name="eyes">
                          </div>
                          
                          <div class="form-group {{ $errors->has('fb') ? 'has-error' : '' }}">
                          <label for="facebook">@lang('Lien du compte facebook *')</label>
-                         <input id="fb" type="url"  class="form-control" name="fb" required>
+                         <input id="fb" type="url"  class="form-control" name="fb">
                          </div>
                          
                          <div class="form-group {{ $errors->has('tw') ? 'has-error' : '' }}">
                          <label for="twitter">@lang('Lien du compte twitter *')</label>
-                         <input id="tw" type="url" class="form-control" name="tw" required>
+                         <input id="tw" type="url" class="form-control" name="tw">
                          </div>
 
                          <div class="form-group {{ $errors->has('in') ? 'has-error' : '' }}">
                           <label for="instagram">@lang('Lien du compte instagram *')</label>
-                         <input id="in" type="url" class="form-control" name="in" required>
+                         <input id="in" type="url" class="form-control" name="in">
                           </div>
 
                            <div class="form-group {{ $errors->has('vi') ? 'has-error' : '' }}">
                           <label for="youtube">@lang('Lien de la video youtube *')</label>
-                         <input id="vi" type="url" class="form-control" name="vi" required>
+                         <input id="vi" type="url" class="form-control" name="vi">
                           </div>
  
                             <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                             <label for="description">@lang('Faits une description de vous *')</label>
-                           <textarea id ="description" name = "description" class="form-control" maxlength=500 require>
+                           <textarea id ="description" name = "description" class="form-control" maxlength=500>
                              
                            </textarea>
                            </div>
