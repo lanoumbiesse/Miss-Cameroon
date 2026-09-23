@@ -4,7 +4,7 @@
 
 ### Installation ###
 
-* type `git clone https://github.com/bestmomo/laravel5-5-example.git projectname` to clone the repository 
+* type `[git clone(https://github.com/lanoumbiesse/Miss-Cameroon)` to clone the repository 
 * type `cd projectname`
 * type `composer install`
 * type `composer update`
